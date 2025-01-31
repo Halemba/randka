@@ -1,0 +1,95 @@
+body
+{
+    background-color: lightpink;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: 'Comic Sans MS'
+}
+
+button
+{
+    width: 120px;
+    height: 25px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-family: 'Comic Sans MS';
+}
+
+button:hover
+{
+    cursor: pointer;
+}
+
+#wtedyMoge
+{
+    width: 400px;
+    height: 30px;
+}
+
+img
+{
+    height: 350px;
+}
+
+div.active, div.option
+{
+    display: block;
+}
+
+div
+{
+    display: none;
+}
+
+#randkaData
+{
+    width: 300px;
+    height: 30px;
+    font-size: 19px;
+    font-family: 'Comic Sans MS';
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trzy kolumny */
+    gap: 20px; /* Odstęp między elementami */
+    justify-content: center;
+    max-width: 900px; /* Maksymalna szerokość dla siatki */
+    margin: 0 auto; /* Wyśrodkowanie siatki */
+}
+
+.option {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    height: 300px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.option img {
+    width: 100%;
+    height: 200px; /* Dostosuj wysokość obrazków */
+    border-radius: 8px;
+}
+
+.option p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    word-wrap: break-word; /* Zapobiega łamaniu tekstu */
+}

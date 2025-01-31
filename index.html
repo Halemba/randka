@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="first active">
+        <h1>Witam piękną panią!!</h1>
+        <button onclick="randka()" id="randkaGuzik">randka??</button><br><br>
+        <img src="images/kot1.jpg" alt="" id="imgKot">
+    </div>
+
+    <div class="nigger">
+        <h1>Witam piękną panią!!</h1>
+        <button onclick="randka2()" id="randkaGuzik">randka??</button><br><br>
+        <img src="images/kot2.gif" alt="" id="imgKot">
+    </div>
+
+    <div class="second">
+        <h1>Wybierz datę i godzinę</h1><br>
+        <input type="datetime-local" id="randkaData"><br><br>
+        <button id="wtedyMoge" onclick="wtedyMoge()">Wtedy mogę!</button>
+    </div>
+
+    <div class="third">
+        <h1>Gdzie idziemy??</h1>
+        <br>
+        <div class="options">
+            <div class="option" onclick="wybor(this)">
+                <img src="images/maczek.jpg" alt="McDonald's">
+                <p>Maczek?</p>
+            </div>
+            <div class="option" onclick="wybor(this)">
+                <img src="images/spacerek.jpg" alt="Spacer">
+                <p>Spacerek?</p>
+            </div>
+            <div class="option" onclick="wybor(this)">
+                <img src="images/film.jpg" alt="Film">
+                <p>Film?</p>
+            </div>
+            <div class="option" onclick="wybor(this)">
+                <img src="images/kregle.jpg" alt="Kręgle">
+                <p>Kręgle?</p>
+            </div>
+            <div class="option" onclick="wybor(this)">
+                <img src="images/golf.jpg" alt="Golf">
+                <p>Golf?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fourth">
+        <h1 style="color: purple;">Super, do zobaczenia kiciu &#60;3 </h1>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    let div1 = document.querySelector(".first");
+    let div2 = document.querySelector(".nigger");
+    let div3 = document.querySelector(".second");
+    let div4 = document.querySelector(".third");
+    let div5 = document.querySelector(".fourth");
+    
+    div1.classList.add("active");
+    div2.classList.remove("active");
+    div3.classList.remove("active");
+    div4.classList.remove("active");
+    div5.classList.remove("active");
+
+    let guzik = document.getElementById("randkaGuzik");
+    let kot = document.getElementById("imgKot");
+    let dataRandki = document.getElementById("randkaData");
+    
+    function randka()
+    {
+        div1.classList.remove("active");
+        div2.classList.add("active");
+        div3.classList.remove("active");
+        div4.classList.remove("active");
+        div5.classList.remove("active");
+    }
+
+    function randka2()
+    {
+        div1.classList.remove("active");
+        div2.classList.remove("active");
+        div3.classList.add("active");
+        div4.classList.remove("active");
+        div5.classList.remove("active");
+    }
+
+    var now = new Date();
+    var utcString = now.toISOString().substring(0,19);
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var localDatetime = year + "-" +
+                      (month < 10 ? "0" + month.toString() : month) + "-" +
+                      (day < 10 ? "0" + day.toString() : day) + "T" +
+                      (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+                      (minute < 10 ? "0" + minute.toString() : minute) +
+                      utcString.substring(16,19);
+    dataRandki.value = localDatetime;
+
+    function wtedyMoge()
+    {
+        div1.classList.remove("active");
+        div2.classList.remove("active");
+        div3.classList.remove("active");
+        div4.classList.add("active");
+        div5.classList.remove("active");
+    }
+
+    function wybor()
+    {
+        div1.classList.remove("active");
+        div2.classList.remove("active");
+        div3.classList.remove("active");
+        div4.classList.remove("active");
+        div5.classList.add("active");
+    }
+</script>
